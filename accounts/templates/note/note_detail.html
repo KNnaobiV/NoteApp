@@ -1,0 +1,12 @@
+{% extends '../base.html' %}
+
+{% block title %}
+    {{ note.title}}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ note.title.as_p|safe }}</h1>
+    <h3>by {{ customuser.username|safe}}</h3>
+    <h5>published on {{note.published|safe }}</h5>
+    <p> {{ note.body }}</p>
+{% endblock %}

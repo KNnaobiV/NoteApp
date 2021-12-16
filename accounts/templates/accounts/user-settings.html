@@ -1,0 +1,9 @@
+{% extends '../base.html' %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'accounts:profile-update-redirect' %}">Update Profile</a>
+{% endblock %}

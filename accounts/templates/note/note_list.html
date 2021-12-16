@@ -1,0 +1,20 @@
+{% extends '../base.html' %}
+
+{% block title %}
+    Note List
+{% endblock %}
+
+{% block content%}
+    {% if notes %}
+        {% for note in notes %}
+            <a href="{% url 'note:note-detail' note.slug %}"><h4>{{note.title}}</h4></a> by 
+                <h6>
+                    {% for author in note.author.all %}
+                    <a href="{% url 'accounts:profile' author.pk %}">{{ author.first_name }} {{ author.last_name }}</a>
+                    {% endfor %}
+                </h6>
+        {% endfor%}
+    {% else %}
+        <p>This user has no notes yet</p>
+    {% endif %}
+{% endblock %}

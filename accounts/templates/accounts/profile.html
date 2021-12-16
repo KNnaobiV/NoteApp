@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block content %}
+        <p>{{ customuser.email }}</p>
+        <p><a href="{{ customuser.get_absolute_url }}">Profile</a></p>
+        <section>
+        </section>    
+{% endblock %}
